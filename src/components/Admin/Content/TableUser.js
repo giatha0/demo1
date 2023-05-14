@@ -31,13 +31,20 @@ const TableUser = (props) => {
                                             className="btn btn-secondary"
                                             onClick={() => props.handleClickBtnViewUser(item)}
                                         >
-                                            View</button>
+                                            View
+                                        </button>
+
                                         <button
                                             className="btn btn-warning mx-3"
                                             onClick={() => props.handleClickBtnUpdate(item)}
                                         >
-                                            Update</button>
-                                        <button className="btn btn-danger">Delete</button>
+                                            Update
+                                        </button>
+
+                                        <button
+                                            className="btn btn-danger"
+                                            onClick={() => props.handleClickBtnDelete(item)}
+                                        >Delete</button>
                                     </td>
                                 </tr>
                             )

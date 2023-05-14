@@ -84,7 +84,7 @@ const ModalUpdateUser = (props) => {
         }
     }
 
-    console.log('check render: data update', dataUpdate);
+
     return (
         <>
             {/* <Button variant="primary" onClick={handleShow}>
