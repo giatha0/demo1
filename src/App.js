@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
 const App = () => {
   const count = useSelector(state => state.counter.count);
+  // stateRedux => call Reducer => state's reducer
+  // state redux changes => react changes
   const dispatch = useDispatch();
 
   return (
