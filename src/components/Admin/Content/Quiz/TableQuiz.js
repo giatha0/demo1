@@ -19,7 +19,7 @@ const TableQuiz = () => {
     return (
         <>
             <div>List Quizzes: </div>
-            <table className="table table-bordered table-hover table-striped mt-2">
+            <table className="table table-bordered table-hover table-striped my-2">
                 <thead>
                     <tr>
                         <th>ID</th>
