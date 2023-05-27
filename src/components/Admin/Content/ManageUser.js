@@ -50,6 +50,7 @@ const ManageUser = (props) => {
     const handleClickBtnUpdate = (user) => {
         setShowModalUpdateUser(true)
         setDataUpdate(user);
+
     }
 
     const handleClickBtnViewUser = (user) => {
@@ -60,6 +61,7 @@ const ManageUser = (props) => {
     const handleClickBtnDelete = (user) => {
         setShowModalDeleteUser(true);
         setDataDelete(user);
+
     }
 
     const resetUpdateData = () => {

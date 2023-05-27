@@ -101,7 +101,9 @@ const ManageQuiz = (props) => {
             </Accordion>
 
             <div className="list-detail">
-                <TableQuiz />
+                <TableQuiz
+                    options={options}
+                />
             </div>
         </div>
     )
