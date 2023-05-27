@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from '../action/counterAction';
+import { DECREMENT } from '../action/counterAction';
 import { FETCH_USER_LOGIN_SUCCESS } from '../action/userAction';
 
 const INITIAL_STATE = {
