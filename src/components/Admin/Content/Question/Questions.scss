@@ -3,14 +3,14 @@
 
     .title {
         margin-bottom: 15px;
-        font-size: 20px;
-        font-weight: 600;
+        font-size    : 20px;
+        font-weight  : 600;
     }
 
     .add-new-question {
         .questions-content {
             display: flex;
-            gap: 20px;
+            gap    : 20px;
 
             .desciption {
                 width: 50%;
@@ -18,40 +18,51 @@
 
             .group-upload {
                 padding-top: 15px;
+
                 .label-upload {
-                    height: 30px;
-                    border: 1px solid red;
-                    border-radius: 5px;
-                    padding: 0px 10px;
                     margin-right: 5px;
-                    cursor: pointer;
+                    cursor      : pointer;
+                    color       : #9068ff;
+                    font-size   : 25px;
+
+                    &:hover {
+                        color: #4400ff;
+                    }
                 }
             }
 
             .btn-add {
                 padding-top: 15px;
+
                 .icon-add {
-                    font-size: 30px;
-                    color: green;
-                    cursor: pointer;
-                    
+                    font-size: 25px;
+                    color    : #2596ff;
+                    cursor   : pointer;
+
+                    &:hover {
+                        color: #0989ff;
+                    }
                 }
+
                 .icon-remove {
                     margin-left: 10px;
-                    font-size: 30px;
-                    color: red;
-                    cursor: pointer;
-                    
+                    font-size  : 25px;
+                    color      : #e8771c;
+                    cursor     : pointer;
+
+                    &:hover {
+                        color: #ff7608;
+                    }
                 }
             }
         }
 
         .answers-content {
-            display: flex;
-            gap: 10px;
-            padding-top: 10px;
+            display     : flex;
+            gap         : 10px;
+            padding-top : 10px;
             padding-left: 20px;
-            align-items: center;
+            align-items : center;
 
             .iscorrect {
                 font-size: 20px;
@@ -63,17 +74,24 @@
 
             .btn-group {
                 .icon-add {
-                    font-size: 30px;
-                    color: green;
-                    cursor: pointer;
-                    
+                    font-size: 25px;
+                    color    : #2596ff;
+                    cursor   : pointer;
+
+                    &:hover {
+                        color: #0989ff;
+                    }
                 }
+
                 .icon-remove {
                     margin-left: 10px;
-                    font-size: 30px;
-                    color: red;
-                    cursor: pointer;
-                    
+                    font-size  : 25px;
+                    color      : #e8771c;
+                    cursor     : pointer;
+
+                    &:hover {
+                        color: #ff7608;
+                    }
                 }
             }
         }
