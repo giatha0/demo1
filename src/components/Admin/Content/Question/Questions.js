@@ -5,7 +5,8 @@ import { HiPlusCircle, HiMinusCircle } from 'react-icons/hi';
 import { RiImageAddFill } from 'react-icons/ri'
 import { v4 as uuidv4 } from 'uuid';
 import _ from 'lodash';
-import { type } from '@testing-library/user-event/dist/type';
+import Lightbox from "react-awesome-lightbox";
+
 
 
 const Questions = () => {
@@ -35,6 +36,12 @@ const Questions = () => {
             }
         ]
     )
+
+    const [isPreviewImage, setIsPreviewImage] = useState(false);
+    const [dataImagePreview, setDataImagePreview] = useState({
+        title: '',
+        url: ''
+    })
 
     const handleAddRemoveQuestion = (type, id) => {
         if (type === 'ADD') {
@@ -131,6 +138,19 @@ const Questions = () => {
         }
     }
 
+    const handlePreviewImage = (questionId) => {
+        let questionClone = _.cloneDeep(questions);
+        let index = questionClone.findIndex(item => item.id === questionId);
+
+        if (index > -1) {
+            setDataImagePreview({
+                url: URL.createObjectURL(questionClone[index].imageFile),
+                title: questionClone[index].imageName
+            })
+            setIsPreviewImage(true);
+        }
+    }
+
     const handleSubmitQuestionForQuiz = () => {
         console.log('questions: ', questions);
     }
@@ -179,7 +199,15 @@ const Questions = () => {
                                             onChange={(event) => handleOnChangeFileQuestion(question.id, event)}
                                             type='file'
                                             hidden />
-                                        <span>{question.imageName ? question.imageName : '0 file is uploaded'}</span>
+                                        <span>
+                                            {
+                                                question.imageName ?
+                                                    <span style={{ cursor: 'pointer' }}
+                                                        onClick={() => handlePreviewImage(question.id)}>{question.imageName}
+                                                    </span>
+                                                    :
+                                                    '0 file is uploaded'}
+                                        </span>
                                     </div>
                                     <div className='btn-add'>
                                         <span onClick={() => handleAddRemoveQuestion('ADD', '')}>
@@ -234,6 +262,8 @@ const Questions = () => {
                                 }
 
 
+
+
                             </div>
                         )
                     })
@@ -250,6 +280,15 @@ const Questions = () => {
 
 
             </div>
+            {isPreviewImage === true &&
+                <Lightbox
+                    image={dataImagePreview.url}
+                    title={dataImagePreview.title}
+                    onClose={() => setIsPreviewImage(false)}
+                ></Lightbox>
+
+            }
+
         </div>
     )
 }
