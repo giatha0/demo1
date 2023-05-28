@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
-import './Questions.scss';
+import './QuizQA.scss';
 import { HiPlusCircle, HiMinusCircle } from 'react-icons/hi';
 import { RiImageAddFill } from 'react-icons/ri'
 import { v4 as uuidv4 } from 'uuid';
@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 
 
-const Questions = () => {
+const QuizQA = () => {
     const initQuestions = [
         {
             id: uuidv4(),
@@ -237,10 +237,7 @@ const Questions = () => {
 
     return (
         <div className="questions-container">
-            <div className="title">
-                Manage Question
-            </div>
-            <hr />
+
             <div className="add-new-question">
                 <div className='col-6 form-group' >
                     <label className='mb-2'>Select Quiz: </label>
@@ -372,4 +369,4 @@ const Questions = () => {
     )
 }
 
-export default Questions;
+export default QuizQA;
