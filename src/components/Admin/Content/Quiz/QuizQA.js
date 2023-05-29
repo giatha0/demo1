@@ -8,7 +8,8 @@ import _ from 'lodash';
 import Lightbox from "react-awesome-lightbox";
 import {
     getQuizWithQA, getAllQuizForAdmin,
-    postCreateNewQuestionForQuiz, postCreateNewAnswerForQuiz
+    postCreateNewQuestionForQuiz, postCreateNewAnswerForQuiz,
+    postUpsertQA
 } from '../../../../services/apiService';
 import { toast } from 'react-toastify';
 
@@ -213,9 +214,15 @@ const QuizQA = () => {
         }
     }
 
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+    });
+
     const handleSubmitQuestionForQuiz = async () => {
 
-        //todo
         //validate
         if (_.isEmpty(selectedQuiz)) {
             toast.error("Please choose a Quiz!")
@@ -241,12 +248,7 @@ const QuizQA = () => {
             return;
         }
 
-
-
-
-
         //validate question
-
         let isValidQuestion = true;
         let indexQ1 = 0;
         for (let i = 0; i < questions.length; i++) {
@@ -263,25 +265,24 @@ const QuizQA = () => {
         }
 
 
-
-        //submit questions
-        for (const question of questions) {
-            const q = await postCreateNewQuestionForQuiz(
-                +selectedQuiz.value,
-                question.description,
-                question.imageFile
-            );
-            //submit answers
-            for (const answer of question.answers) {
-                await postCreateNewAnswerForQuiz(
-                    answer.description, answer.isCorrect, q.DT.id
-                )
+        let questionClone = _.cloneDeep(questions)
+        for (let i = 0; i < questionClone.length; i++) {
+            if (questionClone[i].imageFile) {
+                questionClone[i].imageFile = await
+                    toBase64(questionClone[i].imageFile)
             }
         }
 
-        toast.success('Create questions and answers succed!')
-        setQuestions(initQuestions);
-        //submit answers
+
+        let res = await postUpsertQA({
+            quizId: selectedQuiz.value,
+            questions: questionClone
+        });
+
+        if (res && res.EC === 0) {
+            toast.success(res.EM);
+            fetchQuizWithQA();
+        }
     }
 
 
