@@ -80,7 +80,17 @@
                 justify-content: center;
                 cursor         : pointer;
 
+
                 &:hover {
+                    color: red;
+                }
+
+                &.selected {
+                    background: #c6c6cc;
+                    ;
+                }
+
+                &.clicked {
                     color: red;
                 }
             }

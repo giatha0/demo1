@@ -9,7 +9,7 @@ const CountDown = (props) => {
             return;
         };
         const timer = setInterval(() => {
-            console.log('run me');
+            // console.log('run me');
             setCount(count - 1)
         }, 1000)
 
