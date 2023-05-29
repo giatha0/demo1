@@ -6,7 +6,10 @@ import { RiImageAddFill } from 'react-icons/ri'
 import { v4 as uuidv4 } from 'uuid';
 import _ from 'lodash';
 import Lightbox from "react-awesome-lightbox";
-import { getAllQuizForAdmin, postCreateNewQuestionForQuiz, postCreateNewAnswerForQuiz } from '../../../../services/apiService';
+import {
+    getQuizWithQA, getAllQuizForAdmin,
+    postCreateNewQuestionForQuiz, postCreateNewAnswerForQuiz
+} from '../../../../services/apiService';
 import { toast } from 'react-toastify';
 
 
@@ -40,6 +43,53 @@ const QuizQA = () => {
     useEffect(() => {
         fetchQuiz();
     }, [])
+
+    useEffect(() => {
+        if (selectedQuiz && selectedQuiz.value) {
+            fetchQuizWithQA();
+        }
+
+    }, [selectedQuiz])
+
+    function urltoFile(url, filename, mimeType) {
+        if (url.startsWith('data:')) {
+            var arr = url.split(','),
+                mime = arr[0].match(/:(.*?);/)[1],
+                bstr = atob(arr[arr.length - 1]),
+                n = bstr.length,
+                u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            var file = new File([u8arr], filename, { type: mime || mimeType });
+            return Promise.resolve(file);
+        }
+        return fetch(url)
+            .then(res => res.arrayBuffer())
+            .then(buf => new File([buf], filename, { type: mimeType }));
+    }
+
+    const fetchQuizWithQA = async () => {
+        let rs = await getQuizWithQA(selectedQuiz.value);
+        console.log('check select', selectedQuiz)
+        if (rs && rs.EC === 0) {
+            // convert base64 to File Object
+            let newQA = [];
+            for (let i = 0; i < rs.DT.qa.length; i++) {
+                let q = rs.DT.qa[i];
+                if (q.imageFile) {
+                    q.imageName = `Question-${q.id}.png`;
+                    q.imageFile =
+                        await urltoFile(`data:image/png;base64,${q.imageFile}`, `Question-${q.id}.png`, `image/png`)
+                }
+                newQA.push(q);
+            }
+            setQuestions(newQA);
+            console.log('check QA', newQA)
+            console.log('check res: ', rs.DT.qa)
+        }
+
+    }
 
     const fetchQuiz = async () => {
 
@@ -187,7 +237,7 @@ const QuizQA = () => {
         }
 
         if (isValidAnswer === false) {
-            toast.error(`Not empty Answer ${indexA + 1} at Question ${indexQ + 1}`)
+            toast.error(`Not empty Answer ${indexA + 1} at Question ${indexQ + 1} `)
             return;
         }
 
@@ -208,7 +258,7 @@ const QuizQA = () => {
         }
 
         if (isValidQuestion === false) {
-            toast.error(`Not empty description for Question ${indexQ1 + 1}`)
+            toast.error(`Not empty description for Question ${indexQ1 + 1} `)
             return;
         }
 
@@ -267,11 +317,11 @@ const QuizQA = () => {
                                         <label >Question{index + 1} 's description</label>
                                     </div>
                                     <div className='group-upload'>
-                                        <label htmlFor={`${question.id}`}>
+                                        <label htmlFor={`${question.id} `}>
                                             <RiImageAddFill className='label-upload' />
                                         </label>
                                         <input
-                                            id={`${question.id}`}
+                                            id={`${question.id} `}
                                             onChange={(event) => handleOnChangeFileQuestion(question.id, event)}
                                             type='file'
                                             hidden />

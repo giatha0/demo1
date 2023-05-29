@@ -20,6 +20,7 @@ const ManageQuiz = (props) => {
     const [description, setDescription] = useState('');
     const [type, setType] = useState('');
     const [image, setImage] = useState(null);
+    const [listQuiz, setListQuiz] = useState([]);
 
     const handleChangeFile = (event) => {
         if (event.target && event.target.files && event.target.files[0]) {
@@ -39,7 +40,7 @@ const ManageQuiz = (props) => {
             setName('');
             setDescription('');
             setImage(null);
-
+            await props.fetchQuiz();
         } else {
             toast.error(res.EM)
         }
@@ -101,6 +102,7 @@ const ManageQuiz = (props) => {
                         <div className="list-detail">
                             <TableQuiz
                                 options={options}
+
                             />
                         </div>
                     </Accordion.Body>

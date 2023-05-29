@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllQuizForAdmin } from "../../../../services/apiService";
 import ModalDeleteQuiz from "./ModalDeleteQuiz";
 import ModalUpdateQuiz from "./ModalUpdateQuiz";
+import ManageQuiz from "./ManageQuiz";
 
 const TableQuiz = (props) => {
     const { options } = props;

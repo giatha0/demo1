@@ -105,11 +105,21 @@ const postCreateNewAnswerForQuiz = (description, correct_answer, question_id) =>
     });
 }
 
+const postAssignQuiz = (quizId, userId) => {
+    return axios.post('api/v1/quiz-assign-to-user', {
+        quizId, userId
+    });
+}
+
+const getQuizWithQA = (quizId) => {
+    return axios.get(`api/v1/quiz-with-qa/${quizId}`);
+}
+
 export {
     postCreateUserNewUser, getAllUsers, putUpdateUser,
     deleteUser, getUserWithPaginate, postLogin,
     postRegister, getQuizByUser, getDataQuiz,
     postSubmitQuiz, postCreateNewQuiz, getAllQuizForAdmin,
     deleteQuizForAdmin, putUpdateQuizForAdmin, postCreateNewQuestionForQuiz,
-    postCreateNewAnswerForQuiz
+    postCreateNewAnswerForQuiz, postAssignQuiz, getQuizWithQA
 }
