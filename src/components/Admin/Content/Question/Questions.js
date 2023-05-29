@@ -299,8 +299,6 @@ const Questions = () => {
                                         }
 
                                     </div>
-
-
                                 </div>
                                 {
                                     question.answers && question.answers.length > 0
@@ -339,10 +337,6 @@ const Questions = () => {
                                         )
                                     })
                                 }
-
-
-
-
                             </div>
                         )
                     })
