@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { logout } from '../../services/apiService';
 import { toast } from 'react-toastify';
 import { doLogout } from '../../redux/action/userAction';
+import Languages from './Languages';
 
 const Header = () => {
 
@@ -58,11 +59,11 @@ const Header = () => {
                             </>
                             :
                             <NavDropdown title="Settings" id="basic-nav-dropdown">
-
                                 <NavDropdown.Item >Profile</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => handleLogout()}>Log out </NavDropdown.Item>
                             </NavDropdown>
                         }
+                        <Languages />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
