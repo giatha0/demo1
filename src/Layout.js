@@ -16,9 +16,8 @@ import ListQuiz from './components/User/ListQuiz';
 import DetailQuiz from './components/User/DetailQuiz';
 import ManageQuiz from './components/Admin/Content/Quiz/ManageQuiz';
 import Questions from './components/Admin/Content/Question/Questions';
-import Test2 from './routes/Test2';
-import Test1 from './routes/Test1';
 import PrivateRound from './routes/PrivateRound';
+import { FcPrivacy } from 'react-icons/fc';
 
 const NotFound = () => {
     return (
@@ -45,8 +44,9 @@ const Layout = (props) => {
                 <Route path='/quiz/:id' element={<DetailQuiz />} />
 
                 <Route path='/admins' element={
-
-                    <Admin />
+                    <PrivateRound>
+                        <Admin />
+                    </PrivateRound>
                 } >
                     <Route index element={<DashBoard />} />
                     <Route path="manage-users" element={<ManageUser />} />
@@ -56,7 +56,7 @@ const Layout = (props) => {
 
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
-                <Route path="/test" element={<PrivateRound />} />
+                {/* <Route path="/test" element={<PrivateRound />} /> */}
                 <Route path="*" element={<NotFound />} />
             </Routes>
 

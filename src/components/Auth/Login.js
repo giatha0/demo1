@@ -49,6 +49,13 @@ const Login = (props) => {
             setIsLoading(false);
         }
     }
+
+    const handleKeyDown = (event) => {
+        if (event && event.key === 'Enter') {
+            handleLogin();
+        }
+
+    }
     return (
         <div className="login-container">
             <div className='header'>
@@ -78,6 +85,7 @@ const Login = (props) => {
                         className='form-control'
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
+                        onKeyDown={(event) => handleKeyDown(event)}
                     />
                 </div>
                 <span className='fogot-password'>Forgot Password ?</span>
@@ -86,6 +94,7 @@ const Login = (props) => {
                         className='btn-submit'
                         onClick={() => handleLogin()}
                         disabled={isLoading}
+
                     >
                         {isLoading === true && <ImSpinner10 className="loader-icon" />}
                         <span>Login to Thao Duong Gia</span>
