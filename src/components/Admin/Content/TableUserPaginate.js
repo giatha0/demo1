@@ -1,12 +1,13 @@
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 
 
 const TableUserPaginate = (props) => {
 
 
     const { listUsers, pageCount } = props;
+    const { t } = useTranslation();
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
@@ -20,11 +21,11 @@ const TableUserPaginate = (props) => {
             <table className="table table-hover table-border">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                        <th>Action</th>
+                        <th scope="col">{t('admin.modal.table.id')}</th>
+                        <th scope="col">{t('admin.modal.table.username')}</th>
+                        <th scope="col">{t('admin.modal.table.email')}</th>
+                        <th scope="col">{t('admin.modal.table.role')}</th>
+                        <th>{t('admin.modal.table.action')}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,20 +42,22 @@ const TableUserPaginate = (props) => {
                                             className="btn btn-secondary"
                                             onClick={() => props.handleClickBtnViewUser(item)}
                                         >
-                                            View
+                                            {t('admin.modal.table.view')}
                                         </button>
 
                                         <button
                                             className="btn btn-warning mx-3"
                                             onClick={() => props.handleClickBtnUpdate(item)}
                                         >
-                                            Update
+                                            {t('admin.modal.table.update')}
                                         </button>
 
                                         <button
                                             className="btn btn-danger"
                                             onClick={() => props.handleClickBtnDelete(item)}
-                                        >Delete</button>
+                                        >
+                                            {t('admin.modal.table.delete')}
+                                        </button>
                                     </td>
                                 </tr>
                             )
@@ -62,7 +65,7 @@ const TableUserPaginate = (props) => {
                     }
                     {listUsers && listUsers.length === 0 &&
                         <tr>
-                            <td colSpan={'5'}>Not found data</td>
+                            <td colSpan={'5'}>{t('admin.modal.table.not-f')}</td>
                         </tr>
                     }
                 </tbody>

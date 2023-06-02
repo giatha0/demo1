@@ -3,9 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { deleteQuizForAdmin } from '../../../../services/apiService';
 import { toast } from 'react-toastify';
+import { useTranslation } from "react-i18next";
 
 const ModalDeleteQuiz = (props) => {
     const { show, setShow, dataDelete } = props;
+    const { t } = useTranslation();
 
     const handleClose = () => setShow(false);
     const handleSubmitDeleteQuiz = async () => {
@@ -31,19 +33,19 @@ const ModalDeleteQuiz = (props) => {
                 backdrop="static"
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Confirm Delete the Quiz?</Modal.Title>
+                    <Modal.Title>{t('admin.quiz.modal.confirm-qz')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Are you sure to delete this Quiz. id =
+                <Modal.Body>{t('admin.quiz.modal.delete-qz')}
                     <b>
                         {dataDelete && dataDelete.id ? dataDelete.id : ""}
                     </b>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Cancel
+                        {t('admin.quiz.modal.cancel')}
                     </Button>
                     <Button variant="primary" onClick={() => handleSubmitDeleteQuiz()}>
-                        Confirm
+                        {t('admin.quiz.modal.confirm')}
                     </Button>
                 </Modal.Footer>
             </Modal>

@@ -6,5 +6,190 @@
             "login": "Hãy bắt đầu. Nó miễn phí",
             "n-login": "Làm bài kiểm tra ngay bây giờ"
         }
+    },
+    "header": {
+        "brand-name": "Thao Duong Gia",
+        "home": "Trang Chủ",
+        "user": "Người Dùng",
+        "admin": "Quản Trị",
+        "actions": {
+            "login": "Đăng Nhập",
+            "signup": "Đăng Kí",
+            "title": "Cài Đặt",
+            "settings": {
+                "profile": "Hồ Sơ",
+                "logout": "Đăng Xuất"
+            }
+        }
+    },
+    "languages": {
+        "en": "Tiếng Anh",
+        "vi": "Tiếng Việt"
+    },
+    "login": {
+        "header": "Bạn vẫn chưa có tài khoản?",
+        "signup": "Đăng kí",
+        "title": "Thao Duong Gia",
+        "welcome": "Xin chào, bạn là ai?",
+        "controls": {
+            "email": "Email",
+            "password": "Mật khẩu",
+            "forgotpw": "Quên mật khẩu ?",
+            "login": "Đăng nhập đến Thao Duong Gia",
+            "back": "Đi tới trang chủ"
+        }
+    },
+    "register": {
+        "header": "Bạn có sẵn sàng để tạo một tài khoản",
+        "login": "Đăng nhập",
+        "title": "Thao Duong Gia",
+        "welcome": "Bắt đầu cuộc hành trình của bạn?",
+        "controls": {
+            "email": "Email (*)",
+            "password": "Mật khẩu (*)",
+            "username": "Tên tài khoản",
+            "register": "Tạo tài khoản miễn phí của bạn",
+            "back": "Đi tới trang chủ"
+        }
+    },
+    "user": {
+        "detail-quiz": {
+            "home": "Trang Chủ",
+            "user": "Người Dùng",
+            "quiz": "Bài thi",
+            "prev": "Trước",
+            "next": "Sau",
+            "finish": "Hoàn thành"
+        },
+        "listquiz": {
+            "quiz": "Bài thi",
+            "start": "Bắt đầu ngay",
+            "noq": "Bạn không có bài thi nào!"
+        },
+        "modalresult": {
+            "result": "Kết quả của bạn...",
+            "qs": "Số câu hỏi: ",
+            "as": "Số câu trả lời đúng: ",
+            "show-as": "Xem câu trả lời",
+            "close": "Đóng"
+        },
+        "question": {
+            "qs": "Câu hỏi"
+        }
+    },
+    "admin": {
+        "setting": "Cài đặt",
+        "profile": "Hồ Sơ",
+        "logout": "Đăng xuất",
+        "dashboard": "Bảng điều khiển",
+        "feature": "Tính năng",
+        "manage-u": "Quản lý Users",
+        "manage-qz": "Quản lý Bài Quiz",
+        "manage-qs": "Quản lý Câu Hỏi",
+        "db": {
+            "dashboard": "Bảng điều khiển",
+            "t-user": "Tổng số người dùng",
+            "t-qz": "Tổng số bài thi",
+            "t-qs": "Tổng số câu hỏi",
+            "t-as": "Tổng số câu trả lời"
+        },
+        "m-u": {
+            "manager": "Quản lý người dùng",
+            "add-u": "Thêm mới người dùng"
+        },
+        "modal": {
+            "add": "Thêm mới người dùng",
+            "update": "Cập nhật người dùng",
+            "view": "Xem người dùng",
+            "email": "Email",
+            "pw": "Mật khẩu",
+            "username": "Tên người dùng",
+            "role": "Vai trò",
+            "user": "Người dùng",
+            "admin": "Quản Trị",
+            "upload": "Tải lên hình ảnh",
+            "preview": "Xem trước hình ảnh",
+            "btn-close": "Đóng",
+            "btn-save": "Lưu",
+            "delete": {
+                "confirm-u": "Xác nhận Xóa người dùng?",
+                "confirm-e": "Bạn có chắc chắn xóa người dùng này. email =",
+                "cancel": "Huỷ",
+                "confirm": "Xác nhận"
+            },
+            "table": {
+                "id": "ID",
+                "username": "Tên người dùng",
+                "email": "Email",
+                "role": "Vai trò",
+                "action": "Hành động",
+                "view": "Xem",
+                "update": "Cập nhật",
+                "delete": "Xoá",
+                "not-f": "Không tìm thấy dữ liệu"
+            }
+        },
+        "question": {
+            "manage": "Quản lí câu hỏi",
+            "select": "Chọn bài thi: ",
+            "add": "Thêm câu hỏi:",
+            "q": "Mô tả câu hỏi ",
+            "des": "",
+            "upload": "0 tập tin được tải lên",
+            "as": "Trả lời",
+            "save-q": "Lưu câu hỏi"
+        },
+        "quiz": {
+            "manage": "Quản lí bài thi",
+            "update": "Cập nhật câu hỏi và trả lời của bài thi",
+            "assign-u": "Giao bài cho người dùng",
+            "add": "Thêm bài thi mới",
+            "name": "Tên",
+            "des": "Mô tả",
+            "upload": "Tải lên hình ảnh",
+            "save": "Lưu",
+            "assign": {
+                "select-q": "Chọn bài thi: ",
+                "select-u": "Chọn người dùng: ",
+                "a": "Giao bài"
+            },
+            "modal": {
+                "confirm-qz": "Xác nhận Xóa bài thi?",
+                "delete-qz": "Bạn có chắc chắn xóa bài thi này không. id =",
+                "cancel": "Huỷ",
+                "confirm": "Xác nhận",
+                "update": "Cập nhật bài thi",
+                "id": "ID",
+                "name": "Tên",
+                "des": "Mô tả",
+                "diff": "Độ khó",
+                "easy": "DỄ",
+                "medium": "TRUNG BÌNH",
+                "hard": "KHÓ",
+                "upload": "Tải lên hình ảnh",
+                "preview": "Xem trước hình ảnh",
+                "close": "Đóng",
+                "save": "Lưu"
+            },
+            "qa": {
+                "select": "Chọn bài thi: ",
+                "add": "Thêm câu hỏi: ",
+                "q": "Mô tả câu hỏi ",
+                "des": "",
+                "upload": "0 tập tin được tải lên",
+                "as": "Trả lời",
+                "save": "Lưu câu hỏi"
+            }
+        },
+        "table-qz": {
+            "list": "Danh sách bài thi: ",
+            "id": "ID",
+            "name": "Tên",
+            "des": "Mô tả",
+            "type": "Loại",
+            "action": "Hành động",
+            "edit": "Chỉnh sửa",
+            "delete": "Xoá"
+        }
     }
 }

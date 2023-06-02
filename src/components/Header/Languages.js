@@ -12,8 +12,8 @@ const Languages = () => {
     return (
         <>
             <NavDropdown title={i18n.language === 'vi' ? 'Việt Nam' : 'English'} id="basic-nav-dropdown2" className='languages'>
-                <NavDropdown.Item onClick={() => handleChangeLanguage('en')}> English </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleChangeLanguage('vi')} > Việt Nam </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleChangeLanguage('en')}> {t('languages.en')} </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleChangeLanguage('vi')} > {t('languages.vi')} </NavDropdown.Item>
             </NavDropdown >
         </>
     )

@@ -56,6 +56,26 @@ body {
       z-index         : 10;
       background-color: rgba(0, 0, 0, 0) !important;
 
+      .navbar-brand {
+        .brand-icon {
+          font-size  : 25px;
+          color      : #1795e9;
+          line-height: 25px;
+          animation  : spin 5s infinite linear;
+
+        }
+
+        @keyframes spin {
+          from {
+            transform: scale(1) rotate(0deg);
+          }
+
+          to {
+            transform: scale(1) rotate(360deg);
+          }
+        }
+      }
+
       .nav-link {
         &.active {
           color: #00bfff;

@@ -8,14 +8,21 @@ import { logout } from '../../services/apiService';
 import { toast } from 'react-toastify';
 import { doLogout } from '../../redux/action/userAction';
 import Languages from './Languages';
+import { DiReact } from 'react-icons/di'
+import { useTranslation } from 'react-i18next';
+import Profile from './Profile';
+import { useState } from 'react';
+
 
 const Header = () => {
+    const [isShowModalProfile, setIsShowModalProfile] = useState(false)
 
     const isAuthenticated = useSelector(state => state.user.isAuthenticated)
     const account = useSelector(state => state.user.account)
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
+    const { t } = useTranslation();
+
 
     const handleLogin = () => {
         navigate('/login');
@@ -36,38 +43,53 @@ const Header = () => {
         }
         // console.log('check res1', rs)
     }
+
+    const handleProfile = () => {
+        setIsShowModalProfile(true)
+    }
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
-                {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
-                <NavLink to='/' className='navbar-brand'>Thao Duong Gia</NavLink>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavLink to='/' className='nav-link'>Home</NavLink>
-                        <NavLink to='/users' className='nav-link'>User</NavLink>
-                        <NavLink to='/admins' className='nav-link'>Admin</NavLink>
-                        {/* <Nav.Link href="/">Home</Nav.Link>
+        <>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
+                    <NavLink to='/' className='navbar-brand'>
+                        <DiReact className='brand-icon' />
+                        {t('header.brand-name')}
+                    </NavLink>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <NavLink to='/' className='nav-link'>{t('header.home')}</NavLink>
+                            <NavLink to='/users' className='nav-link'>{t('header.user')}</NavLink>
+                            <NavLink to='/admins' className='nav-link'>{t('header.admin')}</NavLink>
+                            {/* <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/users">Users</Nav.Link>
                         <Nav.Link href="/admins">Admin</Nav.Link> */}
-                    </Nav>
-                    <Nav>
-                        {isAuthenticated === false ?
-                            <>
-                                <button className='btn-login' onClick={() => handleLogin()}>Log in </button>
-                                <button className='btn-signup' onClick={() => handleRegister()}>Sign up</button>
-                            </>
-                            :
-                            <NavDropdown title="Settings" id="basic-nav-dropdown">
-                                <NavDropdown.Item >Profile</NavDropdown.Item>
-                                <NavDropdown.Item onClick={() => handleLogout()}>Log out </NavDropdown.Item>
-                            </NavDropdown>
-                        }
-                        <Languages />
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                        </Nav>
+                        <Nav>
+                            {isAuthenticated === false ?
+                                <>
+                                    <button className='btn-login' onClick={() => handleLogin()}>{t('header.actions.login')} </button>
+                                    <button className='btn-signup' onClick={() => handleRegister()}>{t('header.actions.signup')}</button>
+                                </>
+                                :
+                                <NavDropdown title={t('header.actions.title')} id="basic-nav-dropdown">
+                                    <NavDropdown.Item onClick={() => handleProfile()} >{t('header.actions.settings.profile')}</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => handleLogout()}>{t('header.actions.settings.logout')} </NavDropdown.Item>
+                                </NavDropdown>
+                            }
+                            <Languages />
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+
+            <Profile
+                show={isShowModalProfile}
+                setShow={setIsShowModalProfile}
+            />
+        </>
+
     );
 }
 

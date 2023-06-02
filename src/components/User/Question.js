@@ -1,13 +1,15 @@
 import _ from 'lodash';
 import { useState } from 'react';
 import Lightbox from "react-awesome-lightbox";
+import { useTranslation } from 'react-i18next';
+
 
 
 const Question = (props) => {
 
     const { data, index } = props;
     const [isPreviewImage, setIsPreviewImage] = useState(false);
-
+    const { t } = useTranslation();
 
     if (_.isEmpty(data)) {
         return (<></>)
@@ -40,7 +42,7 @@ const Question = (props) => {
 
                 </div>
             }
-            <div className="question">Question {index + 1}: {data.questionDescription} ?</div>
+            <div className="question">{t('user.question.qs')} {index + 1}: {data.questionDescription} ?</div>
             <div className="answer">
                 {data.answers && data.answers.length &&
                     data.answers.map((a, index) => {

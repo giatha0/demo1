@@ -97,3 +97,19 @@
         }
     }
 }
+
+.detail-quiz-h {
+    padding : 25px 70px;
+    position: relative;
+
+
+
+    .language {
+        position: absolute;
+        right   : 50px;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+}

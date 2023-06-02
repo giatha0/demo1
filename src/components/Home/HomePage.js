@@ -1,7 +1,7 @@
 import videoHomePage from '../../assets/video-homepage.mp4';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 
 const HomePage = (props) => {

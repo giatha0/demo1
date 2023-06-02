@@ -3,6 +3,7 @@ import { getAllQuizForAdmin } from "../../../../services/apiService";
 import ModalDeleteQuiz from "./ModalDeleteQuiz";
 import ModalUpdateQuiz from "./ModalUpdateQuiz";
 import ManageQuiz from "./ManageQuiz";
+import { useTranslation } from "react-i18next";
 
 const TableQuiz = (props) => {
     const { options } = props;
@@ -11,6 +12,7 @@ const TableQuiz = (props) => {
     const [showModalUpdateQuiz, setShowModalUpdateQuiz] = useState(false);
     const [dataDelete, setDataDelete] = useState({});
     const [dataUpdate, setDataUpdate] = useState({});
+    const { t } = useTranslation();
 
     useEffect(() => {
         fetchQuiz();
@@ -41,15 +43,15 @@ const TableQuiz = (props) => {
     }
     return (
         <>
-            <div>List Quizzes: </div>
+            <div>{t('admin.table-qz.list')}</div>
             <table className="table table-bordered table-hover table-striped my-2">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                        <th>Actions</th>
+                        <th>{t('admin.table-qz.id')}</th>
+                        <th>{t('admin.table-qz.name')}</th>
+                        <th>{t('admin.table-qz.des')}</th>
+                        <th>{t('admin.table-qz.type')}</th>
+                        <th>{t('admin.table-qz.action')}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,11 +66,15 @@ const TableQuiz = (props) => {
                                     <button
                                         className="btn btn-warning"
                                         onClick={() => handleClickBtnUpdateQuiz(item)}
-                                    >Edit</button>
+                                    >
+                                        {t('admin.table-qz.edit')}
+                                    </button>
                                     <button
                                         className="btn btn-danger"
                                         onClick={() => handleClickBtnDeleteQuiz(item)}
-                                    >Delete</button>
+                                    >
+                                        {t('admin.table-qz.delete')}
+                                    </button>
                                 </td>
                             </tr>
                         )

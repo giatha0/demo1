@@ -6,5 +6,190 @@
             "login": "Get's started. It's free",
             "n-login": "Doing Quiz Now"
         }
+    },
+    "header": {
+        "brand-name": "Thao Duong Gia",
+        "home": "Home",
+        "user": "User",
+        "admin": "Admin",
+        "actions": {
+            "login": "Log in",
+            "signup": "Sign up",
+            "title": "Settings",
+            "settings": {
+                "profile": "Profile",
+                "logout": "Log out"
+            }
+        }
+    },
+    "languages": {
+        "en": "English",
+        "vi": "VietNamese"
+    },
+    "login": {
+        "header": "Don't have an account yet?",
+        "signup": "Sign up",
+        "title": "Thao Duong Gia",
+        "welcome": "Hello, Who's this?",
+        "controls": {
+            "email": "Email",
+            "password": "Password",
+            "forgotpw": "Forgot Password ?",
+            "login": "Login to Thao Duong Gia",
+            "back": "Go to Homepage"
+        }
+    },
+    "register": {
+        "header": "Already have an account?",
+        "login": "Log in",
+        "title": "Thao Duong Gia",
+        "welcome": "Start your journey?",
+        "controls": {
+            "email": "Email (*)",
+            "password": "Password (*)",
+            "username": "Username",
+            "register": "Create My Free Account",
+            "back": "Go to Homepage"
+        }
+    },
+    "user": {
+        "detail-quiz": {
+            "home": "Home",
+            "user": "User",
+            "quiz": "Quiz",
+            "prev": "Prev",
+            "next": "Next",
+            "finish": "Finish"
+        },
+        "listquiz": {
+            "quiz": "Quiz",
+            "start": "Start Now",
+            "noq": "You don't have any quiz now"
+        },
+        "modalresult": {
+            "result": "Your Result...",
+            "qs": "Total Question:",
+            "as": "Total Correct answers:",
+            "show-as": "Show Answer",
+            "close": "Close"
+        },
+        "question": {
+            "qs": "Question"
+        }
+    },
+    "admin": {
+        "setting": "Settings",
+        "profile": "profile",
+        "logout": "Log out",
+        "dashboard": "Dashboard",
+        "feature": "Features",
+        "manage-u": "Mange Users",
+        "manage-qz": "Manage Quiz",
+        "manage-qs": "Manage Question",
+        "db": {
+            "dashboard": "Dash Board",
+            "t-user": "Total Users",
+            "t-qz": "Total Quizzes",
+            "t-qs": "Total Questions",
+            "t-as": "Total Answers"
+        },
+        "m-u": {
+            "manager": "Manage User",
+            "add-u": "Add new users"
+        },
+        "modal": {
+            "add": "Add new user",
+            "update": "Update a user",
+            "view": "View a user",
+            "email": "Email",
+            "pw": "Password",
+            "username": "Username",
+            "role": "Role",
+            "user": "USERS",
+            "admin": "ADMIN",
+            "upload": "Upload File Image",
+            "preview": "Preview Image",
+            "btn-close": "Close",
+            "btn-save": "Save",
+            "delete": {
+                "confirm-u": "Confirm Delete the User?",
+                "confirm-e": "Are you sure to delete this user. email =",
+                "cancel": "Cancel",
+                "confirm": "Confirm"
+            },
+            "table": {
+                "id": "ID",
+                "username": "Username",
+                "email": "Email",
+                "role": "Role",
+                "action": "Action",
+                "view": "View",
+                "update": "Update",
+                "delete": "Delete",
+                "not-f": "Not found data"
+            }
+        },
+        "question": {
+            "manage": "Manage Question",
+            "select": "Select Quiz: ",
+            "add": "Add questions:",
+            "q": "Question",
+            "des": "'s description",
+            "upload": "0 file is uploaded",
+            "as": "Answers",
+            "save-q": "Save Questions"
+        },
+        "quiz": {
+            "manage": "ManageQuiz",
+            "update": "Update Q/A Quizzes",
+            "assign-u": "Assign to users",
+            "add": "Add New Quiz",
+            "name": "Name",
+            "des": "Description",
+            "upload": "Upload Image",
+            "save": "Save",
+            "assign": {
+                "select-q": "Select Quiz: ",
+                "select-u": "Select User: ",
+                "a": "Assign"
+            },
+            "modal": {
+                "confirm-qz": "Confirm Delete the Quiz?",
+                "delete-qz": "Are you sure to delete this Quiz. id =",
+                "cancel": "Cancel",
+                "confirm": "Confirm",
+                "update": "Update A Quiz",
+                "id": "ID",
+                "name": "Name",
+                "des": "Description",
+                "diff": "Difficulty",
+                "easy": "EASY",
+                "medium": "MEDIUM",
+                "hard": "HARD",
+                "upload": "Upload File Image",
+                "preview": "Preview Image",
+                "close": "Close",
+                "save": "Save"
+            },
+            "qa": {
+                "select": "Select Quiz: ",
+                "add": "Add questions: ",
+                "q": "Question",
+                "des": "'s description",
+                "upload": "0 file is uploaded",
+                "as": "Answers",
+                "save": "Save Questions"
+            }
+        },
+        "table-qz": {
+            "list": "List Quizzes: ",
+            "id": "ID",
+            "name": "Name",
+            "des": "Description",
+            "type": "Type",
+            "action": "Actions",
+            "edit": "Edit",
+            "delete": "Delete"
+        }
     }
 }

@@ -14,11 +14,15 @@ import { DiReact } from "react-icons/di";
 import { MdDashboard } from "react-icons/md";
 import './SideBar.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+
 
 
 
 const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
+
     // const { image, collapsed, toggled, handleToggleSidebar } = props;
     return (
         <>
@@ -56,7 +60,7 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
                             icon={<MdDashboard />}
                         // suffix={<span className="badge red"> New </span>}
                         >
-                            Dashboard
+                            {t('admin.dashboard')}
                             <Link to="/admins" />
                         </MenuItem>
                         {/* <MenuItem icon={<FaGem />}> components </MenuItem> */}
@@ -66,17 +70,17 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
                             // suffix={<span className="badge yellow">3</span>}
                             // icon={<FaRegLaughWink />}
                             icon={<FaGem />}
-                            title="Features"
+                            title={t('admin.feature')}
                         >
                             <MenuItem>
-                                Quản lý Users
+                                {t('admin.manage-u')}
                                 <Link to="/admins/manage-users" />
                             </MenuItem>
                             <MenuItem>
-                                Quản lý Bài Quiz
+                                {t('admin.manage-qz')}
                                 <Link to="/admins/manage-quizzes" />
                             </MenuItem>
-                            <MenuItem> Quản lý Câu Hỏi
+                            <MenuItem> {t('admin.manage-qs')}
                                 <Link to="/admins/manage-questions" />
                             </MenuItem>
                         </SubMenu>

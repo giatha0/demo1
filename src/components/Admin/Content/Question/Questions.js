@@ -8,7 +8,7 @@ import _ from 'lodash';
 import Lightbox from "react-awesome-lightbox";
 import { getAllQuizForAdmin, postCreateNewQuestionForQuiz, postCreateNewAnswerForQuiz } from '../../../../services/apiService';
 import { toast } from 'react-toastify';
-
+import { useTranslation } from "react-i18next";
 
 
 const Questions = () => {
@@ -36,6 +36,8 @@ const Questions = () => {
     })
     const [listQuiz, setListQuiz] = useState([]);
     const [selectedQuiz, setSelectedQuiz] = useState({});
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         fetchQuiz();
@@ -238,12 +240,12 @@ const Questions = () => {
     return (
         <div className="questions-container">
             <div className="title">
-                Manage Question
+                {t('admin.question.manage')}
             </div>
             <hr />
             <div className="add-new-question">
                 <div className='col-6 form-group' >
-                    <label className='mb-2'>Select Quiz: </label>
+                    <label className='mb-2'>{t('admin.question.select')} </label>
                     <Select
                         value={selectedQuiz}
                         onChange={setSelectedQuiz}
@@ -251,7 +253,7 @@ const Questions = () => {
                     />
                 </div>
                 <div className='mt-3 mb-2'>
-                    Add questions:
+                    {t('admin.question.add')}
                 </div>
                 {
                     questions && questions.length > 0
@@ -267,7 +269,7 @@ const Questions = () => {
                                             value={question.description}
                                             onChange={(event) => handleOnChange('QUESTION', question.id, event.target.value)}
                                         />
-                                        <label >Question{index + 1} 's description</label>
+                                        <label >{t('admin.question.q')}{index + 1} {t('admin.question.des')}</label>
                                     </div>
                                     <div className='group-upload'>
                                         <label htmlFor={`${question.id}`}>
@@ -280,12 +282,16 @@ const Questions = () => {
                                             hidden />
                                         <span>
                                             {
-                                                question.imageName ?
+                                                question.imageName
+                                                    ?
                                                     <span style={{ cursor: 'pointer' }}
                                                         onClick={() => handlePreviewImage(question.id)}>{question.imageName}
                                                     </span>
                                                     :
-                                                    '0 file is uploaded'}
+                                                    <span>
+                                                        {t('admin.question.upload')}
+                                                    </span>
+                                            }
                                         </span>
                                     </div>
                                     <div className='btn-add'>
@@ -320,7 +326,7 @@ const Questions = () => {
                                                         placeholder="name@example.com"
                                                         onChange={(event) =>
                                                             handleAnswerQuestion('INPUT', answer.id, question.id, event.target.value)} />
-                                                    <label >Answers {index + 1}</label>
+                                                    <label >{t('admin.question.as')} {index + 1}</label>
                                                 </div>
                                                 <div className='btn-group'>
                                                     <span onClick={() => handleAddRemoveAnswer('ADD', question.id)}>
@@ -347,7 +353,9 @@ const Questions = () => {
                         <button
                             className='btn btn-warning'
                             onClick={() => handleSubmitQuestionForQuiz()}
-                        >Save Questions</button>
+                        >
+                            {t('admin.question.save-q')}
+                        </button>
                     </div>
                 }
 
