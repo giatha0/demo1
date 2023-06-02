@@ -28,24 +28,24 @@ const Profile = (props) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Tabs
-                        defaultActiveKey="profile"
+                        defaultActiveKey="information"
                         id="justify-tab-example"
                         className="mb-3"
                         justify
                     >
-                        <Tab eventKey="home" title="Information" className="userinfor">
+                        <Tab eventKey="information" title={t('header.infor')} className="userinfor">
                             <UserInfor
                                 setShow={setShow}
                                 show={show}
                             />
                         </Tab>
-                        <Tab eventKey="profile" title="Password" className="changepw">
+                        <Tab eventKey="change-password" title={t('header.pw')} className="changepw">
                             <ChangePassword
                                 setShow={setShow}
                                 show={show}
                             />
                         </Tab>
-                        <Tab eventKey="longer-tab" title="History">
+                        <Tab eventKey="history" title={t('header.h')}>
                             <History />
                         </Tab>
 

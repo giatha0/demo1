@@ -22,6 +22,9 @@
             }
         },
         "title-manage": "Manage User Information",
+        "infor": "Information",
+        "pw": "Password",
+        "h": "History",
         "user-infor": {
             "username": "Username",
             "email": "Email",

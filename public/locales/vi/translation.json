@@ -22,6 +22,9 @@
             }
         },
         "title-manage": "Quản lí thông tin người dùng",
+        "infor": "Thông tin người dùng",
+        "pw": "Đổi mật khẩu",
+        "h": "Lịch sử",
         "user-infor": {
             "username": "Tên người dùng",
             "email": "Email",
