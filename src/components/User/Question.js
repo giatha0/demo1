@@ -2,12 +2,12 @@ import _ from 'lodash';
 import { useState } from 'react';
 import Lightbox from "react-awesome-lightbox";
 import { useTranslation } from 'react-i18next';
-
+import { IoIosCloseCircleOutline, IoIosCheckmarkCircleOutline } from 'react-icons/io'
 
 
 const Question = (props) => {
 
-    const { data, index } = props;
+    const { data, index, isShowAnswer } = props;
     const [isPreviewImage, setIsPreviewImage] = useState(false);
     const { t } = useTranslation();
 
@@ -55,11 +55,25 @@ const Question = (props) => {
                                         className="form-check-input"
                                         type="checkbox"
                                         checked={a.isSelected}
+                                        disabled={props.isSubmitQuiz}
                                         onChange={(event) => handleHandleCheclbox(event, a.id, data.questionId)}
                                     />
                                     <label className="form-check-label">
                                         {a.description}
                                     </label>
+                                    {isShowAnswer === true &&
+
+                                        <>
+                                            {
+                                                a.isSelected === true && a.isCorrect === false
+                                                && <IoIosCloseCircleOutline className='incorrect' />
+                                            }
+                                            {
+                                                a.isCorrect === true
+                                                && <IoIosCheckmarkCircleOutline className='correct' />
+                                            }
+                                        </>
+                                    }
                                 </div>
 
                             </div>

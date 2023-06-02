@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { postChangePassword } from "../../services/apiService";
 import { toast } from "react-toastify";
-import { VscEye, VscEyeClosed } from 'react-icons/vsc'
+import { VscEye, VscEyeClosed } from 'react-icons/vsc';
+import { useTranslation } from "react-i18next";
 
 const ChangePassword = (props) => {
     const { show, setShow } = props;
@@ -10,6 +11,8 @@ const ChangePassword = (props) => {
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [isShowPassword, setIsShowPassword] = useState(false);
+
+    const { t } = useTranslation();
 
     const handleClose = () => {
         setShow(false);
@@ -39,7 +42,7 @@ const ChangePassword = (props) => {
         <>
             <form className="row g-3">
                 <div className="col-md-4 pass-group">
-                    <label className="form-label">Current Password</label>
+                    <label className="form-label">{t('header.changepw.current-pw')}</label>
                     <input
                         type={isShowPassword ? "text" : "password"}
                         className="form-control"
@@ -59,7 +62,7 @@ const ChangePassword = (props) => {
                     }
                 </div>
                 <div className="col-md-4 pass-group" >
-                    <label className="form-label">New Password</label>
+                    <label className="form-label">{t('header.changepw.new-pw')}</label>
                     <input
                         type={isShowPassword ? "text" : "password"}
                         className="form-control"
@@ -79,7 +82,7 @@ const ChangePassword = (props) => {
                     }
                 </div>
                 <div className="col-md-4 pass-group" >
-                    <label className="form-label">Confirm Password</label>
+                    <label className="form-label">{t('header.changepw.confirm-pw')}</label>
                     <input
                         type={isShowPassword ? "text" : "password"}
                         className="form-control"
@@ -105,7 +108,7 @@ const ChangePassword = (props) => {
                     className='btn btn-warning'
                     onClick={() => handleChangePassword()}
                 >
-                    Change Password
+                    {t('header.changepw.change')}
                 </button>
             </div >
         </>

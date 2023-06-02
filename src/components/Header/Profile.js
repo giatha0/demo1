@@ -1,14 +1,16 @@
 import { Modal } from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-
 import './Profile.scss';
 import UserInfor from "./UserInfor";
 import ChangePassword from "./ChangePassword";
+import History from "./History";
+import { useTranslation } from "react-i18next";
 
 
 const Profile = (props) => {
     const { show, setShow } = props;
+    const { t } = useTranslation();
     const handleClose = () => {
         setShow(false);
     }
@@ -22,7 +24,7 @@ const Profile = (props) => {
                 className="profile"
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Profile</Modal.Title>
+                    <Modal.Title>{t('header.title-manage')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Tabs
@@ -44,7 +46,7 @@ const Profile = (props) => {
                             />
                         </Tab>
                         <Tab eventKey="longer-tab" title="History">
-                            Doing Quiz
+                            <History />
                         </Tab>
 
                     </Tabs>

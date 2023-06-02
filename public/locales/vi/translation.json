@@ -20,6 +20,31 @@
                 "profile": "Hồ Sơ",
                 "logout": "Đăng Xuất"
             }
+        },
+        "title-manage": "Quản lí thông tin người dùng",
+        "user-infor": {
+            "username": "Tên người dùng",
+            "email": "Email",
+            "role": "Vai trò",
+            "user": "Người dùng",
+            "admin": "Quản trị",
+            "upload": "Tải lên hình ảnh",
+            "image": "Hình ảnh",
+            "update": "Cập nhật"
+        },
+        "history": {
+            "id": "ID",
+            "qz-name": "Tên bài thi",
+            "total-q": "Tổng số câu hỏi",
+            "total-c": "Tổng sô câu trả lời đúng",
+            "date": "Ngày",
+            "n-found": "Không tìm thấy dữ liệu"
+        },
+        "changepw": {
+            "current-pw": "Mật khẩu hiện tại",
+            "new-pw": "Mật khẩu mới",
+            "confirm-pw": "Xác nhận mật khẩu",
+            "change": "Đổi mật khẩu"
         }
     },
     "languages": {

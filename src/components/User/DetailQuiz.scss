@@ -113,3 +113,19 @@
         text-decoration: none !important;
     }
 }
+
+.q-content {
+    .incorrect {
+        color        : red;
+        font-size    : 15px;
+        margin-left  : 5px;
+        margin-bottom: 2px;
+    }
+
+    .correct {
+        color        : green;
+        font-size    : 15px;
+        margin-left  : 5px;
+        margin-bottom: 2px;
+    }
+}

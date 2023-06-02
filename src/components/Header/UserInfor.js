@@ -4,11 +4,11 @@ import _ from 'lodash';
 import { FcPlus } from 'react-icons/fc';
 import { putUpdateProfile } from "../../services/apiService";
 import { toast } from 'react-toastify';
-
+import { useTranslation } from "react-i18next";
 
 const UserInfor = (props) => {
     const { show, setShow } = props;
-
+    const { t } = useTranslation();
     const account = useSelector(state => state.user.account)
 
     const [email, setEmail] = useState("");
@@ -67,7 +67,7 @@ const UserInfor = (props) => {
         <>
             <form className="row g-3">
                 <div className="col-md-4">
-                    <label className="form-label">Username</label>
+                    <label className="form-label">{t('header.user-infor.username')}</label>
                     <input
                         type="text"
                         className="form-control"
@@ -77,7 +77,7 @@ const UserInfor = (props) => {
                     />
                 </div>
                 <div className="col-md-4">
-                    <label className="form-label">Email</label>
+                    <label className="form-label">{t('header.user-infor.email')}</label>
                     <input
                         type="email"
                         className="form-control"
@@ -88,21 +88,21 @@ const UserInfor = (props) => {
                 </div>
 
                 <div className="col-md-4">
-                    <label className="form-label">Role</label>
+                    <label className="form-label">{t('header.user-infor.role')}</label>
                     <select
                         className="form-select"
                         value={role}
                         onChange={(event) => setRole(event.target.role)}
                         disabled
                     >
-                        <option value="USER">USER</option>
-                        <option value="ADMIN">ADMIN</option>
+                        <option value="USER">{t('header.user-infor.user')}</option>
+                        <option value="ADMIN">{t('header.user-infor.admin')}</option>
                     </select>
                 </div>
                 <div className="col-md-6">
                     <label className="form-label label-upload" htmlFor="labelUpload">
                         <FcPlus />
-                        Upload image
+                        {t('header.user-infor.upload')}
                     </label>
                     <input
                         type="file"
@@ -115,7 +115,7 @@ const UserInfor = (props) => {
                     {previewImage ?
                         <img src={previewImage} />
                         :
-                        <span>Image</span>
+                        <span>{t('header.user-infor.image')}</span>
                     }
                 </div>
             </form>
@@ -125,7 +125,7 @@ const UserInfor = (props) => {
                     className='btn btn-warning'
                     onClick={() => handleProfile()}
                 >
-                    Update
+                    {t('header.user-infor.update')}
                 </button>
             </div >
 

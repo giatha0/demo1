@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 
 const ModalResult = (props) => {
-    const { show, setShow, dataModalResult } = props;
+    const { show, setShow, dataModalResult, handleShowAnswer } = props;
     const handleClose = () => setShow(false);
     const { t } = useTranslation();
 
@@ -28,14 +28,22 @@ const ModalResult = (props) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button
+                        variant="secondary"
+                        onClick={() => {
+                            handleClose();
+                            props.handleShowAnswer();
+                        }
+                        }
+
+                    >
                         {t('user.modalresult.show-as')}
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
                         {t('user.modalresult.close')}
                     </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal >
         </>
     );
 }

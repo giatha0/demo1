@@ -20,6 +20,31 @@
                 "profile": "Profile",
                 "logout": "Log out"
             }
+        },
+        "title-manage": "Manage User Information",
+        "user-infor": {
+            "username": "Username",
+            "email": "Email",
+            "role": "Role",
+            "user": "USER",
+            "admin": "ADMIN",
+            "upload": "Upload Image",
+            "image": "Image",
+            "update": "Update"
+        },
+        "history": {
+            "id": "ID",
+            "qz-name": "Quiz Name",
+            "total-q": "Total Question",
+            "total-c": "Total Correct",
+            "date": "Date",
+            "n-found": "Not Found data"
+        },
+        "changepw": {
+            "current-pw": "Current Password",
+            "new-pw": "New Password",
+            "confirm-pw": "Confirm Password",
+            "change": "Change Password"
         }
     },
     "languages": {
